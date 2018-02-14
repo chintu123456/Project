@@ -1,5 +1,6 @@
 angular.module('shoppingcart.product')
-    .controller('AddProductCtrl', ['ProductService', function(productService){
+    .controller('AddProductCtrl', ['ProductService', 
+    function(ProductService){
         this.newProduct = {};
 
         this.onFormSubmit = function(e){
@@ -8,10 +9,7 @@ angular.module('shoppingcart.product')
             ProductService.addProduct(this.newProduct).then(function(){
                 alert('added successfully');
             });
-               
-        
-        
-    };
+        };
     }])
     .component('addProduct', {
         templateUrl: 'src/product/components/add-product/add-product.component.html',
