@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    border-bottom: 1px solid #000;
+    margin: 10px;
+    padding: 10px;
+}
+
+#header ul li{
+    list-style: none;
+    display: inline-block;
+    background-color: burlywood;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#header ul li.active{
+    background-color: #fff;
+    color: #000;
+}
+
+#header ul li a {
+    text-decoration: none;
+}
+
+.product{
+    display: inline-block;
+    width: 30vw;
+    height: 200px;
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}

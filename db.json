@@ -1,0 +1,10 @@
+{
+    "products": [
+      {  "id": 1,
+         "title": "iPhone 6", 
+         "company": "Apple",
+         "price": 100,
+         "imgUrl": "https://www.o2.co.uk/shop/phones/apple/iphone-6s-plus"
+           }
+    ]
+}
