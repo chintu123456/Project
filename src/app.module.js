@@ -15,10 +15,7 @@ angular.module('shoppingcart')
             resolve: {
                 products: ['ProductService', function(ProductService){
                     return ProductService
-                            .getProducts()
-                            .then(function(res){
-                                return res.data;
-                            });
+                            .getProducts();
                 }]
             }
         });
@@ -30,31 +27,28 @@ angular.module('shoppingcart')
         });
 
         $stateProvider.state({
+            name: 'showProductInfo',
+            url: '/product-details/{productId}',
+            component: 'productDetails',
+            resolve: {
+                product: ['ProductService', '$transition$', 
+                function(ProductService, $transition$){
+                    var params = $transition$.params();
+                    var productId = params.productId;
+                    return ProductService.getProductDetails(productId);
+                }]
+            }
+        });
+
+        $stateProvider.state({
             name: 'cart',
             url: '/cart',
             component: 'cart'
         });
 
-        $stateProvider.state({
-            name: 'showProductInfo',
-            url: '/product-details/{productId}',
-            component: 'productDetails',
-            resolve:{
-                product: ['ProductService','$transition$',
-            function(ProductService,$transition$){
-                var params = $transition$.params();
-                var productId = params().productId;
-                return ProductService.getProductDetails(productId);
-            }]
-            }
-
-        });
-
-
         $urlRouterProvider.otherwise('/');
 
     }]);
-
 
 
 
